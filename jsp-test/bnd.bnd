@@ -1,0 +1,4 @@
+Bundle-Name: jsp-test
+Bundle-SymbolicName: hu.bp.portletsec.jsptest
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.jsptest.constants

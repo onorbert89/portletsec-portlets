@@ -1,0 +1,4 @@
+Bundle-Name: redirect
+Bundle-SymbolicName: hu.bp.portletsec.redirect
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.redirect.constants

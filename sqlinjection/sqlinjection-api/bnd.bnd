@@ -1,0 +1,9 @@
+Bundle-Name: sqlinjection-api
+Bundle-SymbolicName: hu.bp.portletsec.sqlinjection.api
+Bundle-Version: 1.0.1
+Export-Package:\
+	hu.bp.portletsec.sqlinjection.exception,\
+	hu.bp.portletsec.sqlinjection.model,\
+	hu.bp.portletsec.sqlinjection.service,\
+	hu.bp.portletsec.sqlinjection.service.persistence
+-includeresource: META-INF/service.xml=../sqlinjection-service/service.xml

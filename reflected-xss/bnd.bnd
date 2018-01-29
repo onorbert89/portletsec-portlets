@@ -1,0 +1,4 @@
+Bundle-Name: reflected-xss
+Bundle-SymbolicName: hu.bp.portletsec.reflectedxss
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.reflectedxss.constants

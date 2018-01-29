@@ -1,0 +1,4 @@
+Bundle-Name: sql-test
+Bundle-SymbolicName: hu.bp.portletsec.sqltest
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.sqltest.constants

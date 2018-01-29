@@ -1,0 +1,3 @@
+Bundle-Name: sqlinjection-web
+Bundle-SymbolicName: hu.bp.portletsec.sqlinjection
+Bundle-Version: 1.0.1

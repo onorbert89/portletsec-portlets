@@ -1,0 +1,4 @@
+Bundle-Name: include-secret
+Bundle-SymbolicName: hu.bp.portletsec.includesecret
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.includesecret.constants

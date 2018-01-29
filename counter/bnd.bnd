@@ -1,0 +1,4 @@
+Bundle-Name: counter
+Bundle-SymbolicName: hu.bp.portletsec.counter
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.counter.constants

@@ -1,0 +1,4 @@
+Bundle-Name: upload-image
+Bundle-SymbolicName: hu.bp.portletsecurity
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsecurity.constants

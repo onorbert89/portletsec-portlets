@@ -1,0 +1,4 @@
+Bundle-Name: persistent-xss
+Bundle-SymbolicName: hu.bp.portletsec.persistentxss
+Bundle-Version: 1.0.0
+Export-Package: hu.bp.portletsec.persistentxss.constants
