@@ -10,7 +10,7 @@ String param1 = ParamUtil.getString(request, "param1");
 <p> Use Chrome browser on port 8080</p>
 
 <liferay-ui:panel-container>
-	<liferay-ui:panel collapsible="true" state="closed" title="1">
+	<liferay-ui:panel collapsible="true" state="closed" title="task 1">
 	
 		<portlet:renderURL var="param1URL">
 		    <portlet:param name="param1" value="hello"></portlet:param>
@@ -31,7 +31,7 @@ String param1 = ParamUtil.getString(request, "param1");
 	
 	<p>param1:<%= param1 %></p>
 	
-	<liferay-ui:panel collapsible="true" state="closed" title="2">
+	<liferay-ui:panel collapsible="true" state="closed" title="hint for Chrome and XSS Auditor (optional)">
 		<p>
 		You may be successful disable chrome XSS auditor:<br>
 			Start chrome with --disable-web-security --user-data-dir=/var/tmp/pc<br>
@@ -39,18 +39,12 @@ String param1 = ParamUtil.getString(request, "param1");
 		</p>	
 	</liferay-ui:panel>
 
-	<liferay-ui:panel collapsible="true" state="closed" title="3">
+	<liferay-ui:panel collapsible="true" state="closed" title="How to move on">
 		<p>
-			I could not do it, so I set Liferay not to send X-XSS-Protection header. Try again on port 9090. 
+			I could not do it, so I set Liferay not to send X-XSS-Protection header. With this, I could use Chrome
+			to inject XSS, However, from now on, please use Firefox, it does not have xss filter. 
 		</p>
 	</liferay-ui:panel>
-
-	<liferay-ui:panel collapsible="true" state="closed" title="4">
-		<p>
-			You can use Firefox because it does not have xss filter. Try it!
-		</p>
-	</liferay-ui:panel>
-
 </liferay-ui:panel-container>
 
 
@@ -60,25 +54,26 @@ String param2 = ParamUtil.getString(request, "param2");
 param2 = param2.replaceAll("(?i)<(/?script[^>]*)>", "");
 %>
 
-<p> Use Firefox or Chrome on port 9090.</p>
+<p> Use Firefox</p>
 
 <liferay-ui:panel-container>
-	<liferay-ui:panel collapsible="true" state="closed" title="1">
+	<liferay-ui:panel collapsible="true" state="closed" title="task 2">
 	
 		<portlet:renderURL var="param2URL">
 		    <portlet:param name="param2" value="hello"></portlet:param>
 		</portlet:renderURL>
 		
 		<p>
-			I replaced the <%= HtmlUtil.escape("<script>") %> tag with a regexp, so you should be cleverer.
+			I deleted the <%= HtmlUtil.escape("<script>") %> tag from the input with a regexp,
+			so you should be cleverer.<br>
 			Your task is the same, however, with <a href="<%= param2URL %>">this</a> url.
-			If you stuck, got to the next task.
+			If you stuck, go to the next task.
 		</p>
 	</liferay-ui:panel>
 	
 	<p>param2:<%= param2 %></p>
 	
-	<liferay-ui:panel collapsible="true" state="closed" title="2">
+	<liferay-ui:panel collapsible="true" state="closed" title="hint for task 2">
 		<p>
 		Here is the code which try filter the input parameter:
 <pre>
@@ -89,6 +84,11 @@ param2 = param2.replaceAll("(?i)<(/?script[^>]*)>", "");
 		</p>	
 	</liferay-ui:panel>
 
+	<liferay-ui:panel collapsible="true" state="closed" title="hint for task 2">
+		<p>
+		Make a script tag with to overlapped script tag! My regexp will delete only the inner one...</p>
+	</liferay-ui:panel>
+
 </liferay-ui:panel-container>
 
 
@@ -96,7 +96,7 @@ param2 = param2.replaceAll("(?i)<(/?script[^>]*)>", "");
 String param3 = ParamUtil.getString(request, "param3");
 %>
 
-<p> Use Firefox or Chrome on port 9090.</p>
+<p> Use Firefox</p>
 
 <liferay-ui:panel-container>
 	<liferay-ui:panel collapsible="true" state="closed" title="1">
@@ -121,8 +121,9 @@ String param3 = ParamUtil.getString(request, "param3");
 String param4 = ParamUtil.getString(request, "param4");
 %>
 
-<h1>Let's do something useful! (not ready yet)</h1>
-<p> Use Firefox or Chrome on port 9090.</p>
+<h5>Let's do something useful!</h5>
+<p>(not ready yet)</p>
+<p> Use Firefox</p>
 
 <p>
 Hello Dear user <%= param4 %>! Download this <a href="http://localhost:8080/goodfile">file</a>!
