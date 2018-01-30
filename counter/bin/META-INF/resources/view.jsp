@@ -9,7 +9,8 @@
 </aui:form>
 
 <%
-String counter = portletPreferences.getValue("counter", "0");
+String userId = String.valueOf(themeDisplay.getUserId());
+String counter = portletPreferences.getValue(userId + "counter", "0");
 %>
 
 <p>

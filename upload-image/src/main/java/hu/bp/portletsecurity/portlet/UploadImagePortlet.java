@@ -49,7 +49,9 @@ public class UploadImagePortlet extends MVCPortlet {
 	private final String exifCommand = "identify -format '%[EXIF:*]'";
 	
 	private List<String> getCommandList(String command, String arg) {
-		return new ArrayList<String>(Arrays.asList((command + " " + arg).split(" ")));
+		List<String> commands = new ArrayList<String>(Arrays.asList((command + " " + arg).split(" ")));
+		_log.error("ImageMagic commands:" + String.join(" ", commands));
+		return commands;
 	}
 
 	private void processFile(ActionRequest request) {
@@ -65,10 +67,10 @@ public class UploadImagePortlet extends MVCPortlet {
 
 			try {
 				FileUtil.copyFile(fromFileName, toFileName);
-				String[] info = ImageMagickUtil.identify(getCommandList(exifCommand, toFileName));
+				String[] info = ImageMagickUtil.identify(getCommandList(infoCommand, toFileName));
 				storePreferences(setData(request, fileName, file.getName(), String.join("\n", info)));
 			} catch (Exception e) {
-				e.printStackTrace();
+				_log.error(e.getMessage());
 			}
 		}
 	}

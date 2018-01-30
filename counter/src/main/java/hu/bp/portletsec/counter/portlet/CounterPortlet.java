@@ -14,6 +14,8 @@ import org.osgi.service.component.annotations.Component;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.WebKeys;
 
 import hu.bp.portletsec.counter.constants.CounterPortletKeys;
 
@@ -43,11 +45,15 @@ public class CounterPortlet extends MVCPortlet {
 	private PortletPreferences incCounter(ActionRequest request){
 		PortletPreferences prefs = request.getPreferences();
 		
-		int counterValue = Integer.parseInt(prefs.getValue("counter", "0"));
+		ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+				WebKeys.THEME_DISPLAY);
+		String userId = String.valueOf(themeDisplay.getUserId());
+		
+		int counterValue = Integer.parseInt(prefs.getValue(userId + "counter", "0"));
 		counterValue++;
 		
 		try {
-			prefs.setValue("counter", "" + counterValue);
+			prefs.setValue(userId + "counter", "" + counterValue);
 		} catch (ReadOnlyException e) {
 			_log.error(e);
 		}
