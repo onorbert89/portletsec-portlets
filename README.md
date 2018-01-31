@@ -40,7 +40,7 @@ So you are a smart, well trained, cautious IT people? Do you think, that nasty t
 
 * Install Liferay Portal CE GA5 (ITs free and open source)
 * Run
-* Deploy all the portlets
+* Deploy all the portlets from this repo's jar dir
 * Put the portlets into one page or to different pages
 * Follow the instructions
 
