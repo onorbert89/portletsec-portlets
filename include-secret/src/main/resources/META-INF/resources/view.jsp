@@ -18,10 +18,4 @@ String paramValue = ParamUtil.getString(request, "fileName");
 <a href="<%= pageaURL %>">Click to page A!</a>
 <a href="<%= pagebURL %>">Click to page B!</a>
 
-<p> Use Firefox or Chrome on port 9090.</p>
-
-<liferay-ui:panel-container>
-	<liferay-ui:panel collapsible="true" state="closed" title="include trick">
-		<p>Check the form above and try to display the page <b>secret.jsp</b></p>
-	</liferay-ui:panel>
-</liferay-ui:panel-container>
+<p>Check the URLs above and try to display the page <b>secret.jsp</b></p>
